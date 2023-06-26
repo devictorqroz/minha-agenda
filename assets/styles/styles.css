@@ -1,0 +1,176 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333;
+}
+
+/* title {
+  
+} */
+
+h1 {
+  position: fixed;
+  width: 100%;
+  font-style: oblique;
+  color: orange;
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+.menu {
+  position: fixed;
+  width: 100%;
+  margin-top: 140px;
+  height: 50px;
+  background-color: orange;
+  border-radius: 15px;
+
+}
+
+.menu ul {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  overflow: auto;
+ 
+}
+
+.menu ul button {
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: orange;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.menu ul button:hover {
+  font-weight: bold;
+  background-color: #333;
+  border-color: lightgray;
+  color: orange;
+}
+
+.menu #filtro-pesquisa {
+  border-radius: 5px;
+}
+
+.menu #campo-pesquisar {
+  border-radius: 5px;
+}
+
+.agenda {
+  position: fixed;
+  margin-top: 200px;
+  margin-bottom: 10px;
+  background-color: orange;
+  border-radius: 15px;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: max-content;
+  max-height: 300px;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+
+.cadastro {
+  //background-color: white;
+  border-radius: 15px;
+  padding-bottom: 10px;
+
+}
+
+
+.formulario {
+  background-color: #333;
+  color: orange;
+  border-radius: 15px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form.hidden {
+  display: none;  
+} 
+
+.formulario input {
+  width: 50%;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.formulario #bt-salvar {
+  width: fit-content;
+  margin-bottom: 5px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: orange;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.formulario #bt-salvar:hover {
+  font-weight: bold;
+  background-color: #333;
+  border-color: lightgray;
+  color: orange;
+}
+
+/* ul.hidden {
+  display: none;
+} */
+
+.agenda.hidden {
+  display: none;
+} 
+
+.agenda {
+  background-color: orange;
+}
+
+.agenda ul li {
+  background-color: white;
+  margin-bottom: 5px;
+  padding: 5px;
+  list-style-type: none;
+}
+
+
+.contato-lista {
+  border-radius: 15px;
+}
+
+#bt-editar, #bt-excluir {
+  border-radius: 5px;
+  background-color: orange;
+  color: #333;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#bt-editar:hover, #bt-excluir:hover {
+  background-color: #333;
+  color: orange;
+}
+
+.rodape {
+  background-color: orange;
+  position: fixed;
+  margin-top: 540px;
+  border-radius: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
