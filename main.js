@@ -38,10 +38,6 @@ function exibirAgenda() {
     }
 }
 
-function salvarLista() {
-    localStorage.setItem("listaDeContatos", JSON.stringify(listaDeContatos));
-}
-
 function ordenarLista() {
     listaDeContatos.sort(function (a, b) {
         const contatoA = a.nome.toUpperCase();
@@ -57,9 +53,28 @@ function ordenarLista() {
     });
 }
 
+function formatarLista() {
+    let nomes = [];
+    let cont = 0;
+    listaDeContatos.forEach((contato) => {
+        nomes[cont] = contato.nome.toLowerCase().split(" ");
+        for (let i = 0; i < nomes[cont].length; i++) {
+            nomes[cont][i] =
+                nomes[cont][i][0].toUpperCase() + nomes[cont][i].substring(1);
+        }
+        contato.nome = nomes[cont].join(" ");
+        cont++;
+    });
+}
+
+function salvarLista() {
+    ordenarLista();
+    formatarLista();
+    localStorage.setItem("listaDeContatos", JSON.stringify(listaDeContatos));
+}
+
 function listarContatos(filtro = "", pesquisa = "") {
     exibirAgenda();
-    ordenarLista();
     listaExibicao.innerHTML = "";
     listaDeContatos.forEach((contato, id) => {
         const nomeContato = contato.nome.toUpperCase();
