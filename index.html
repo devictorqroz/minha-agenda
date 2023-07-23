@@ -1,52 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minha Agenda</title>
-  <link rel="icon" href="./assets/img/favicon.png" type="image/png" />
-  <link rel="shortcut icon" href="./assets/img/favicon.ico" />
-  <link rel="stylesheet" href="./assets/styles/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script defer src="main.js"></script>
-</head>
-<body>
-  <h1>Minha Agenda</h1>
-  <div class="menu">
-    <ul>
-      <button id="bt-home">Home</button>
-      <button id="bt-cadastrar">Cadastrar</button> 
-      <button id="bt-listar">Listar</button>
-      <label for="campo-pesquisar">Filtrar:</label>
-      <select name="" id="filtro-pesquisa">
-        <option value="nome">Nome</option>
-        <option value="telefone">Telefone</option>
-        <option value="email">Email</option>
-      </select> 
-      <input id="campo-pesquisar" type="text"  maxlength="50" placeholder="pesquisar">
-    </ul>
-  </div>
-  <div class="agenda hidden">
-    <div class="cadastro">
-      <form class="formulario hidden">
-        <input type="hidden" name="id">
-        <label for="cadastro-nome">Nome:</label>
-        <input name="nome" id="cadastro-nome" type="text" maxlength="50" placeholder="nome">
-        <label for="cadastro-tel">Telefone:</label>
-        <input name="telefone" id="cadastro-tel" type="tel"  maxlength="20" placeholder="telefone">
-        <label for="cadastro-email">Email:</label>
-        <input name="email" id="cadastro-email" type="email" maxlength="50" placeholder="email">
-        <input type="submit" id="bt-salvar" value="Salvar" />
-      </form>
-    </div>
-    <ul class="lista-exibicao">
-     
-    </ul>
-  </div>
-  <div class="rodape">
-    <h5>2023</h5>
-  </div>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Minha Agenda</title>
+        <link rel="icon" href="./assets/img/favicon.png" type="image/png" />
+        <link rel="shortcut icon" href="./assets/img/favicon.ico" />
+        <link rel="stylesheet" href="./assets/styles/styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <script src="main.js" defer></script>
+    </head>
+    <body>
+        <h1>Minha Agenda</h1>
+        <div class="menu">
+            <ul>
+                <button id="bt-home">Home</button>
+                <button id="bt-cadastrar">Cadastrar</button>
+                <button id="bt-listar">Listar</button>
+                <label for="campo-pesquisar">Filtrar:</label>
+                <select name="" id="filtro-pesquisa">
+                    <option value="nome">Nome</option>
+                    <option value="telefone">Telefone</option>
+                    <option value="email">Email</option>
+                </select>
+                <input
+                    id="campo-pesquisar"
+                    type="text"
+                    maxlength="50"
+                    placeholder="pesquisar"
+                />
+            </ul>
+        </div>
+        <div class="agenda hidden">
+            <div class="cadastro">
+                <form class="formulario hidden">
+                    <input type="hidden" name="id" />
+                    <label for="cadastro-nome">Nome:</label>
+                    <input
+                        name="nome"
+                        id="cadastro-nome"
+                        type="text"
+                        placeholder="nome"
+                        pattern="^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ' ]+$"
+                        title="Preencha um nome válido contendo pelo menos 2 digitos sem símbolos ou caracteres especiais."
+                        maxlength="40"
+                        required
+                    />
+                    <label for="cadastro-tel">Telefone:</label>
+                    <input
+                        name="telefone"
+                        id="cadastro-tel"
+                        type="text"
+                        placeholder="telefone"
+                        pattern="\d{8,12}"
+                        title="Preencha um formato de telefone válido contendo de 8 a 12 digitos."
+                        maxlength="12"
+                        required
+                    />
+                    <label for="cadastro-email">Email:</label>
+                    <input
+                        name="email"
+                        id="cadastro-email"
+                        type="email"
+                        placeholder="email"
+                        title="Preencha um formato de email válido"
+                        maxlength="30"
+                        required
+                    />
+                    <input type="submit" id="bt-salvar" value="Salvar" />
+                </form>
+            </div>
+            <ul class="lista-exibicao"></ul>
+        </div>
+        <div class="rodape">
+            <h5>2023</h5>
+        </div>
+    </body>
 </html>
-
